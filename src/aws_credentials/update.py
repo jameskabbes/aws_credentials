@@ -1,11 +1,12 @@
 import py_starter.py_starter as ps
 import aws_credentials
+from aws_credentials import AWS_Creds
 import time
 
 def update():
 
     ### Using option 2 from the AWS console
-    new_Cred = aws_credentials.AWS_Creds.AWS_Cred( string = ps.paste() )
+    new_Cred = AWS_Creds.AWS_Cred( string = ps.paste() )
     new_Cred.print_atts()
 
     if not new_Cred.role != None:
@@ -18,7 +19,7 @@ def update():
 
     print()
     print ('Current Credentials at ' + str( aws_credentials.creds_Path.p ))
-    og_Creds = aws_credentials.AWS_Creds.import_Creds( aws_credentials.creds_Path.p )
+    og_Creds = AWS_Creds.import_Creds( aws_credentials.creds_Path.p )
     #og_Creds.print_atts()
 
     print ()

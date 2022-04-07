@@ -1,4 +1,5 @@
+from aws_credentials import update
 
 def run( *sys_args ):
 
-    print ('Running main for aws_credentials')
+    update()
