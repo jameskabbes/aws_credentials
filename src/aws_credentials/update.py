@@ -36,13 +36,6 @@ def update():
     print ()
     return True
 
-
 if __name__ == '__main__':
 
-    SUCCESS_SLEEPY_TIME = 0.5
-    ERROR_SLEEPY_TIME = 5
-    
-    if update():
-        time.sleep( SUCCESS_SLEEPY_TIME )
-    else:
-        time.sleep( ERROR_SLEEPY_TIME )
+    update()
