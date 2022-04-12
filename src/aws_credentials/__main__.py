@@ -1,4 +1,5 @@
 import sys
+import time
 sys_args = sys.argv[1:]
 
 from aws_credentials import update
