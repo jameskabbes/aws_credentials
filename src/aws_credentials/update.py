@@ -1,7 +1,6 @@
-import py_starter.py_starter as ps
+import py_starter as ps
 import aws_credentials
 from aws_credentials import AWS_Creds
-import time
 
 def update():
 

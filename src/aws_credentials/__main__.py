@@ -1,14 +1,8 @@
-import sys
 import time
-sys_args = sys.argv[1:]
+import aws_credentials
 
-from aws_credentials import update
-
-SUCCESS_SLEEPY_TIME = 1
-ERROR_SLEEPY_TIME = 5
-
-if update():
-    time.sleep( SUCCESS_SLEEPY_TIME )
+if aws_credentials.update():
+    time.sleep( 1 )
 else:
-    time.sleep( ERROR_SLEEPY_TIME )
+    time.sleep( 5 )
 
