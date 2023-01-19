@@ -1,19 +1,21 @@
 import kabbes_client
 import aws_credentials
 
-class Client( kabbes_client.Client ):
+class Client( aws_credentials.AWS_Creds ):
 
-    _CONFIG = {
-        "_Dir": aws_credentials._Dir
-    }
+    _BASE_DICT = {}
 
-    def __init__( self, *args, **kwargs ):
-        kabbes_client.Client.__init__( self, *args, **kwargs)
+    def __init__( self, dict={} ):
 
-        if not self.cfg.access_keys.Path.exists():
-            self.cfg.access_keys.Path.write( string ='{}' )
+        d = {}
+        d.update( Client._BASE_DICT )
+        d.update( dict )
 
-        self.cfg.print_atts()
+        self.Package = kabbes_client.Package( aws_credentials._Dir, dict=d )
+        self.cfg = self.Package.cfg
 
-        self.Creds = aws_credentials.AWS_Creds( self )
+        if not self.cfg['access_keys.Path'].exists():
+            self.cfg['access_keys.Path'].write( string ='{}' )
+
+        aws_credentials.AWS_Creds.__init__( self )
 

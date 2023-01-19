@@ -91,9 +91,7 @@ class AWS_Creds (ParentPluralDict) :
     Creds: Dictionary where key is a role and value is an AWS_Cred class instance
     string: string which contains the exported version of the AWS_Creds"""
 
-    def __init__( self, Client, load_from_json=True, dict={} ):
-        self.Client = Client
-
+    def __init__( self, load_from_json=True, dict={} ):
         ParentPluralDict.__init__( self, att='Creds' )
         
         self.dict = dict
@@ -104,7 +102,7 @@ class AWS_Creds (ParentPluralDict) :
 
     def _import_from_json( self ):
 
-        self.dict = self.Client.cfg.access_keys.Path.read_json_to_dict()
+        self.dict = self.cfg['access_keys.Path'].read_json_to_dict()
 
     def export( self ):
 
@@ -115,7 +113,7 @@ class AWS_Creds (ParentPluralDict) :
 
     def _export_to_json( self ):
         
-        self.Client.cfg.access_keys.Path.write( string = ps.dict_to_json(self.dict) ) 
+        self.cfg['access_keys.Path'].write( string = ps.dict_to_json(self.dict) ) 
 
     def _load_Creds( self ):
 
@@ -153,7 +151,7 @@ class AWS_Creds (ParentPluralDict) :
 
         self.add_new_Cred( new_Cred )
         self.print_atts()
-        print ('Writing merged credentials to ' + str( self.Client.cfg.access_keys.Path ))
+        print ('Writing merged credentials to ' + str( self.cfg['access_keys.Path'] ))
         self.export()
 
         print ()

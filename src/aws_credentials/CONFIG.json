@@ -1,7 +1,7 @@
 {
     "access_keys":{
         "!Path":{
-            "$ref": "{{cache.package.Dir}}",
+            "$ref": "{R{package.config.cache.Dir}R}",
             "method":{
                 "name": "join_Path",
                 "kwargs":{
