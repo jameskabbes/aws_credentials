@@ -11,5 +11,6 @@
         }
     },
     "SLEEP_SUCCESS":1,
-    "SLEEP_FAILURE":3
+    "SLEEP_FAILURE":3,
+    "role": null
 }
