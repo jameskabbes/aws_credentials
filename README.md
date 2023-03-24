@@ -1,8 +1,8 @@
-[GitHub Pages](https://jameskabbes.github.io/aws_credentials)<br>
-[PyPI](https://pypi.org/project/kabbes-aws-credentials)
-
 # aws_credentials
 System for quickly importing AWS credentials into Python scripts
+
+[Documentation](https://jameskabbes.github.io/aws_credentials)<br>
+[PyPI](https://pypi.org/project/kabbes-aws-credentials)
 
 <br> 
 

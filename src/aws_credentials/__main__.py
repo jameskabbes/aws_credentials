@@ -1,8 +1,11 @@
-import time
 import aws_credentials
+import time
 
-if aws_credentials.update():
-    time.sleep( 1 )
+aws_credentials.client.print_atts()
+print ()
+
+if aws_credentials.client.update_from_clipboard():
+    time.sleep( aws_credentials.client.cfg['SLEEP_SUCCESS'])
 else:
-    time.sleep( 5 )
+    time.sleep( aws_credentials.client.cfg['SLEEP_FAILURE']) 
 
