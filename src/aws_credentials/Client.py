@@ -15,7 +15,7 @@ class Client( aws_credentials.AWS_Creds ):
         self.cfg = self.Package.cfg
 
         if not self.cfg['access_keys.Path'].exists():
-            self.cfg['access_keys.Path'].write( string ='{}' )
+            self.cfg['access_keys.Path'].write( string ='{}',override=True )
 
         aws_credentials.AWS_Creds.__init__( self )
 
